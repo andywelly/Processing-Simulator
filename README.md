@@ -1,4 +1,4 @@
-Computer Systems Project: Process and Memory Management Simulator
+# Computer Systems Project: Process and Memory Management Simulator
 
 **Overview:**
 
