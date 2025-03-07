@@ -1,0 +1,47 @@
+task 1
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./allocate -f cases/task1/spec.txt -m infinite -q 1
+==363921== 
+==363921== HEAP SUMMARY:
+==363921==     in use at exit: 0 bytes in 0 blocks
+==363921==   total heap usage: 21 allocs, 21 frees, 5,900 bytes allocated
+==363921== 
+==363921== All heap blocks were freed -- no leaks are possible
+==363921== 
+==363921== For lists of detected and suppressed errors, rerun with: -s
+==363921== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+task 2
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./allocate -f cases/task2/fill.txt -m first-fit -q 3
+==400425== 
+==400425== HEAP SUMMARY:
+==400425==     in use at exit: 0 bytes in 0 blocks
+==400425==   total heap usage: 30 allocs, 30 frees, 6,109 bytes allocated
+==400425== 
+==400425== All heap blocks were freed -- no leaks are possible
+==400425== 
+==400425== For lists of detected and suppressed errors, rerun with: -s
+==400425== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+task 3
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./allocate -f cases/task3/internal-frag.txt -m paged -q 1
+==439612== 
+==439612== HEAP SUMMARY:
+==439612==     in use at exit: 0 bytes in 0 blocks
+==439612==   total heap usage: 98 allocs, 98 frees, 10,075 bytes allocated
+==439612== 
+==439612== All heap blocks were freed -- no leaks are possible
+==439612== 
+==439612== For lists of detected and suppressed errors, rerun with: -s
+==439612== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+task 4
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./allocate -f cases/task4/no-evict.txt -q 3 -m virtual
+==542363== 
+==542363== HEAP SUMMARY:
+==542363==     in use at exit: 0 bytes in 0 blocks
+==542363==   total heap usage: 50 allocs, 50 frees, 34,899 bytes allocated
+==542363== 
+==542363== All heap blocks were freed -- no leaks are possible
+==542363== 
+==542363== For lists of detected and suppressed errors, rerun with: -s
+==542363== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
